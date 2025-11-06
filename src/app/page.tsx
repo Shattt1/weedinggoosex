@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function RSVPForm() {
     const [name, setName] = useState("");
@@ -91,6 +90,84 @@ function RSVPForm() {
     );
 }
 
+// Компонент для управления музыкой в виде виниловой пластинки
+function MusicPlayer() {
+    const [isPlaying, setIsPlaying] = useState(false);
+    const audioRef = useRef(null);
+
+    const toggleMusic = () => {
+        if (audioRef.current) {
+            if (isPlaying) {
+                audioRef.current.pause();
+            } else {
+                audioRef.current.play().catch(error => {
+                    console.log("Автовоспроизведение заблокировано:", error);
+                });
+            }
+            setIsPlaying(!isPlaying);
+        }
+    };
+
+    return (
+        <>
+            <audio
+                ref={audioRef}
+                loop
+                preload="metadata"
+                onEnded={() => setIsPlaying(false)}
+            >
+                <source src="/music/wedding-music.mp3" type="audio/mpeg" />
+                <source src="/music/wedding-music.ogg" type="audio/ogg" />
+                Ваш браузер не поддерживает аудио элемент.
+            </audio>
+
+            <button
+                onClick={toggleMusic}
+                className="fixed top-6 right-6 z-50 w-16 h-16 bg-transparent rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 group"
+                aria-label={isPlaying ? "Выключить музыку" : "Включить музыку"}
+            >
+                {/* Виниловая пластинка */}
+                <div className={`relative w-14 h-14 ${isPlaying ? 'animate-spin' : ''}`} style={{ animationDuration: '3s' }}>
+                    {/* Внешний круг пластинки */}
+                    <div className="absolute inset-0 rounded-full bg-[#2C2C2C] border-4 border-[#5D4037]"></div>
+
+                    {/* Дорожки на пластинке */}
+                    <div className="absolute inset-2 rounded-full border-2 border-[#5D4037] opacity-60"></div>
+                    <div className="absolute inset-4 rounded-full border-2 border-[#5D4037] opacity-40"></div>
+                    <div className="absolute inset-6 rounded-full border-2 border-[#5D4037] opacity-20"></div>
+
+                    {/* Центральная часть пластинки */}
+                    <div className="absolute inset-0 m-auto w-6 h-6 rounded-full bg-[#5D4037] flex items-center justify-center">
+                        <div className="w-2 h-2 rounded-full bg-white"></div>
+                    </div>
+
+                    {/* Этикетка */}
+                    <div className="absolute inset-0 m-auto w-8 h-8 rounded-full bg-[#8B7355] flex items-center justify-center">
+                        <div className="w-4 h-4 rounded-full bg-[#5D4037] flex items-center justify-center">
+                            {isPlaying ? (
+                                <div className="w-1 h-1 rounded-full bg-white"></div>
+                            ) : (
+                                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            )}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Индикатор звука */}
+                {isPlaying && (
+                    <div className="absolute -bottom-2 flex space-x-1">
+                        <span className="w-1 h-1 bg-[#5D4037] rounded-full animate-pulse"></span>
+                        <span className="w-1 h-1 bg-[#5D4037] rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></span>
+                        <span className="w-1 h-1 bg-[#5D4037] rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></span>
+                    </div>
+                )}
+            </button>
+        </>
+    );
+}
+
 export default function Home() {
 
     const [isHeroImageLoaded, setIsHeroImageLoaded] = useState(false);
@@ -154,6 +231,9 @@ export default function Home() {
 
     return (
         <div className="min-h-screen bg-[#FAF0E6] text-[#5D4037]">
+            {/* Music Player */}
+            <MusicPlayer />
+
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-start overflow-hidden pl-8 pr-8">
                 <img
@@ -161,7 +241,8 @@ export default function Home() {
                     alt="Наша свадьба"
                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${isHeroImageLoaded ? 'opacity-100' : 'opacity-0'}`}
                 />
-                
+                <div className="absolute left-0 top-0 bottom-0 w-1/4 bg-gradient-to-r from-black/80 to-transparent z-10"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-1/4 bg-gradient-to-l from-black/80 to-transparent z-10"></div>
                 <div className="relative z-20 text-white animate-fade-in max-w-2xl">
                     {/* Вертикальная дата слева */}
                     <div className="flex flex-col space-y-2 mb-8">
@@ -323,23 +404,79 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* Gender Party Section */}
+            <section className="py-16 px-6 max-w-6xl mx-auto animate-on-scroll">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                    {/* Фотография */}
+                    <div className="animate-on-scroll" style={{ animationDelay: '0.1s' }}>
+                        <img
+                            src="/images/gender-party.jpg"
+                            alt="Гендер-пати на нашей свадьбе"
+                            className="w-full rounded-lg shadow-lg"
+                        />
+                    </div>
+
+                    {/* Информация о гендер-пати */}
+                    <div className="animate-on-scroll" style={{ animationDelay: '0.3s' }}>
+                        <h2 className="text-5xl md:text-6xl font-script italic mb-8 text-[#5D4037]">Гендер-пати</h2>
+                        <div className="space-y-6 text-[#5D4037]">
+                            <p className="text-lg leading-relaxed">
+                                Мы подготовили особенный сюрприз для наших гостей!
+                                Во время банкета состоится традиционное гендер-пати -
+                                разделение на мужскую и женскую компании.
+                            </p>
+
+                            <div className="bg-[#F5F5DC] p-6 rounded-lg border-l-4 border-[#5D4037]">
+                                <h3 className="text-2xl font-script italic mb-4 text-[#5D4037]">Что вас ждет:</h3>
+                                <ul className="space-y-3 text-[#5D4037]">
+                                    <li className="flex items-start">
+                                        <span className="text-[#5D4037] mr-3">•</span>
+                                        <span>Отдельные развлекательные программы для мужчин и женщин</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="text-[#5D4037] mr-3">•</span>
+                                        <span>Тематические конкурсы и игры</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="text-[#5D4037] mr-3">•</span>
+                                        <span>Особые угощения для каждой компании</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="text-[#5D4037] mr-3">•</span>
+                                        <span>Сюрпризы и подарки для всех участников</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <p className="text-lg leading-relaxed italic text-[#795548]">
+                                Это прекрасная возможность пообщаться в своем кругу,
+                                поделиться историями и просто хорошо провести время!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Wishes Section */}
             <section className="py-16 px-6 max-w-6xl mx-auto">
                 <h2 className="text-5xl md:text-6xl font-script italic text-center mb-16 text-[#5D4037] animate-on-scroll">Пожелания</h2>
                 <div className="grid md:grid-cols-3 gap-6">
-                    <div className="bg-[#5D4037] text-white p-8 rounded-lg relative animate-on-scroll" style={{ animationDelay: '0.1s' }}>
-                        <div className="absolute top-4 right-4 text-8xl font-serif opacity-20">01</div>
-                        <h3 className="text-3xl font-script italic mb-6">Подарки</h3>
-                        <p className="text-sm leading-relaxed">
+                    {/* Пожелание 01 - Оливковый цвет */}
+                    <div className="bg-[#6B8E23] p-8 rounded-lg relative animate-on-scroll" style={{ animationDelay: '0.1s' }}>
+                        <div className="absolute top-4 right-4 text-8xl font-serif opacity-20 text-[#5D4037]">01</div>
+                        <h3 className="text-3xl font-script italic mb-6 text-[#5D4037]">Подарки</h3>
+                        <p className="text-sm leading-relaxed text-[#5D4037]">
                             Свои теплые слова и пожелания<br />
                             напишите в сердцах, а подарки<br />
                             – в конверте.
                         </p>
                     </div>
-                    <div className="bg-[#5D4037] text-white p-8 rounded-lg relative animate-on-scroll" style={{ animationDelay: '0.2s' }}>
-                        <div className="absolute top-4 right-4 text-8xl font-serif opacity-20">02</div>
-                        <h3 className="text-3xl font-script italic mb-6">Цветы</h3>
-                        <p className="text-sm leading-relaxed">
+
+                    {/* Пожелание 02 - Розовый цвет */}
+                    <div className="bg-[#F5E6E6] p-8 rounded-lg relative animate-on-scroll" style={{ animationDelay: '0.2s' }}>
+                        <div className="absolute top-4 right-4 text-8xl font-serif opacity-20 text-[#5D4037]">02</div>
+                        <h3 className="text-3xl font-script italic mb-6 text-[#5D4037]">Цветы</h3>
+                        <p className="text-sm leading-relaxed text-[#5D4037]">
                             Если Вы захотите подарить<br />
                             нам цветы, то пожалуйста<br />
                             не мучить букеты ростовской<br />
@@ -349,10 +486,12 @@ export default function Home() {
                             домашней коллекции.
                         </p>
                     </div>
-                    <div className="bg-[#5D4037] text-white p-8 rounded-lg relative animate-on-scroll" style={{ animationDelay: '0.3s' }}>
-                        <div className="absolute top-4 right-4 text-8xl font-serif opacity-20">03</div>
-                        <h3 className="text-3xl font-script italic mb-6">Дети</h3>
-                        <p className="text-sm leading-relaxed">
+
+                    {/* Пожелание 03 - Бежевый цвет */}
+                    <div className="bg-[#E8DFD3] p-8 rounded-lg relative animate-on-scroll" style={{ animationDelay: '0.3s' }}>
+                        <div className="absolute top-4 right-4 text-8xl font-serif opacity-20 text-[#5D4037]">03</div>
+                        <h3 className="text-3xl font-script italic mb-6 text-[#5D4037]">Дети</h3>
+                        <p className="text-sm leading-relaxed text-[#5D4037]">
                             Территория ресторана<br />
                             не предусматривает наличие<br />
                             детских зон и отдельных<br />
