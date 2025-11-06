@@ -403,54 +403,38 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Gender Party Section */}
+            {/* Gender Reveal Section */}
             <section className="py-16 px-6 max-w-6xl mx-auto animate-on-scroll">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     {/* Фотография */}
                     <div className="animate-on-scroll" style={{ animationDelay: '0.1s' }}>
                         <img
                             src="/images/gender-party.jpg"
-                            alt="Гендер-пати на нашей свадьбе"
+                            alt="Сюрприз с полом ребенка на нашей свадьбе"
                             className="w-full rounded-lg shadow-lg"
                         />
                     </div>
 
-                    {/* Информация о гендер-пати */}
+                    {/* Информация о гендер-ревиле */}
                     <div className="animate-on-scroll" style={{ animationDelay: '0.3s' }}>
-                        <h2 className="text-5xl md:text-6xl font-script italic mb-8 text-[#5D4037]">Гендер-пати</h2>
+                        <h2 className="text-5xl md:text-6xl font-script italic mb-8 text-[#5D4037]">Сюрприз для гостей - гендер-пати</h2>
                         <div className="space-y-6 text-[#5D4037]">
                             <p className="text-lg leading-relaxed">
-                                Мы подготовили особенный сюрприз для наших гостей!
-                                Во время банкета состоится традиционное гендер-пати -
-                                разделение на мужскую и женскую компании.
+                                В этот особенный день мы хотим поделиться с вами
+                                еще одной радостной новостью! Мы узнаем пол нашего
+                                будущего малыша вместе с вами!
                             </p>
 
-                            <div className="bg-[#F5F5DC] p-6 rounded-lg border-l-4 border-[#5D4037]">
-                                <h3 className="text-2xl font-script italic mb-4 text-[#5D4037]">Что вас ждет:</h3>
-                                <ul className="space-y-3 text-[#5D4037]">
-                                    <li className="flex items-start">
-                                        <span className="text-[#5D4037] mr-3">•</span>
-                                        <span>Отдельные развлекательные программы для мужчин и женщин</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-[#5D4037] mr-3">•</span>
-                                        <span>Тематические конкурсы и игры</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-[#5D4037] mr-3">•</span>
-                                        <span>Особые угощения для каждой компании</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="text-[#5D4037] mr-3">•</span>
-                                        <span>Сюрпризы и подарки для всех участников</span>
-                                    </li>
-                                </ul>
-                            </div>
+                            
 
                             <p className="text-lg leading-relaxed italic text-[#795548]">
-                                Это прекрасная возможность пообщаться в своем кругу,
-                                поделиться историями и просто хорошо провести время!
+                                Приготовьтесь разделить с нами этот волнительный
+                                и счастливый момент! Мы будем рады, если вы станете
+                                свидетелями этого чуда вместе с нами.
                             </p>
+
+                            {/* Интерактивный элемент - угадай пол */}
+                            
                         </div>
                     </div>
                 </div>
