@@ -1,46 +1,53 @@
 import { NextRequest } from 'next/server';
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+
+// Отправка и тебе, и Владе
+const RECIPIENTS = [
+    '428300068', // Твой ID
+    '806843409', // 
+];
 
 export async function POST(request: NextRequest) {
-  try {
-    const data = await request.json();
-    const { name, attending } = data;
+    if (!TELEGRAM_BOT_TOKEN) {
+        return new Response(
+            JSON.stringify({ error: 'Missing TELEGRAM_BOT_TOKEN' }),
+            { status: 500 }
+        );
+    }
 
-    const message = `
+    try {
+        const { name, attending } = await request.json();
+
+        const message = `
 🎉 Новый ответ на анкету!
 
 Имя: ${name}
 Присутствует: ${attending === 'yes' ? 'Да ✅' : 'Нет ❌'}
     `.trim();
 
-    const res = await fetch(
-      `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          chat_id: TELEGRAM_CHAT_ID,
-          text: message,
-          parse_mode: 'HTML',
-        }),
-      }
-    );
+        // Отправляем всем получателям
+        const sendPromises = RECIPIENTS.map(chatId =>
+            fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: message,
+                }),
+            })
+        );
 
-    if (res.ok) {
-      return new Response(JSON.stringify({ success: true }), {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
-      });
-    } else {
-      return new Response(JSON.stringify({ success: false, error: 'Telegram error' }), {
-        status: 500,
-      });
+        await Promise.all(sendPromises);
+
+        return new Response(JSON.stringify({ success: true }), {
+            status: 200,
+            headers: { 'Content-Type': 'application/json' },
+        });
+    } catch (error) {
+        console.error('API error:', error);
+        return new Response(JSON.stringify({ success: false, error: 'Server error' }), {
+            status: 500,
+        });
     }
-  } catch (error) {
-    return new Response(JSON.stringify({ success: false, error: 'Server error' }), {
-      status: 500,
-    });
-  }
 }
