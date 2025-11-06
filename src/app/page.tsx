@@ -405,15 +405,7 @@ export default function Home() {
 
             {/* Gender Reveal Section */}
             <section className="py-16 px-6 max-w-6xl mx-auto animate-on-scroll">
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    {/* Фотография */}
-                    <div className="animate-on-scroll" style={{ animationDelay: '0.1s' }}>
-                        <img
-                            src="/images/gender-party.jpg"
-                            alt="Сюрприз с полом ребенка на нашей свадьбе"
-                            className="w-full rounded-lg shadow-lg"
-                        />
-                    </div>
+                
 
                     {/* Информация о гендер-ревиле */}
                     <div className="animate-on-scroll" style={{ animationDelay: '0.3s' }}>
@@ -425,8 +417,15 @@ export default function Home() {
                                 будущего малыша вместе с вами!
                             </p>
 
-                            
-
+                        <div className="grid md:grid-cols-2 gap-12 items-center">
+                            {/* Фотография */}
+                            <div className="animate-on-scroll" style={{ animationDelay: '0.1s' }}>
+                                <img
+                                    src="/images/gender-party.jpg"
+                                    alt="Сюрприз с полом ребенка на нашей свадьбе"
+                                    className="w-full rounded-lg shadow-lg"
+                                />
+                            </div>
                             <p className="text-lg leading-relaxed italic text-[#795548]">
                                 Приготовьтесь разделить с нами этот волнительный
                                 и счастливый момент! Мы будем рады, если вы станете
