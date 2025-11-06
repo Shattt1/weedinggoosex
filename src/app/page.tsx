@@ -157,6 +157,8 @@ export default function Home() {
                     alt="Наша свадьба"
                     className="absolute inset-0 w-full h-full object-cover"
                 />
+                <div className="absolute left-0 top-0 bottom-0 w-1/4 bg-gradient-to-r from-black/80 to-transparent z-10"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-1/4 bg-gradient-to-l from-black/80 to-transparent z-10"></div>
                 <div className="relative z-20 text-white animate-fade-in max-w-2xl">
                     {/* Вертикальная дата слева */}
                     <div className="flex flex-col space-y-2 mb-8">
@@ -184,29 +186,29 @@ export default function Home() {
                 </p>
 
                 {/* Calendar */}
-                <h3 className="text-4xl md:text-5xl font-serif tracking-widest mb-8">Февраль 2026</h3>
+                <h3 className="text-4xl md:text-5xl font-serif tracking-widest mb-8">ФЕВРАЛЬ 2026</h3>
                 <div className="flex justify-center gap-4 md:gap-8 mb-4 text-sm md:text-base text-gray-500">
-                    <span>Пн</span>
-                    <span>Вт</span>
-                    <span>Ср</span>
-                    <span>Чт</span>
-                    <span>Пт</span>
-                    <span>Сб</span>
-                    <span>Вс</span>
+                    <span className="w-8 md:w-12 text-center animate-fade-in" style={{ animationDelay: '0.2s' }}>Пн</span>
+                    <span className="w-8 md:w-12 text-center animate-fade-in" style={{ animationDelay: '0.4s' }}>Вт</span>
+                    <span className="w-8 md:w-12 text-center animate-fade-in" style={{ animationDelay: '0.6s' }}>Ср</span>
+                    <span className="w-8 md:w-12 text-center animate-fade-in" style={{ animationDelay: '0.8s' }}>Чт</span>
+                    <span className="w-8 md:w-12 text-center animate-fade-in" style={{ animationDelay: '1s' }}>Пт</span>
+                    <span className="w-8 md:w-12 text-center animate-fade-in" style={{ animationDelay: '1.2s' }}>Сб</span>
+                    <span className="w-8 md:w-12 text-center animate-fade-in" style={{ animationDelay: '1.4s' }}>Вс</span>
                 </div>
                 <div className="flex justify-center gap-4 md:gap-8 text-lg md:text-xl">
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <span>5</span>
-                    <span className="relative inline-block">
-                        <span className="relative z-10">6</span>
-                        <svg className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 -z-0" viewBox="0 0 50 50">
-                            <path d="M 25 5 Q 35 15, 40 25 Q 35 35, 25 45 Q 15 35, 10 25 Q 15 15, 25 5" fill="none" stroke="#413d3d" strokeWidth="1.5" />
+                    <span className="w-8 md:w-12 h-8 md:h-12 flex items-center justify-center animate-fade-in" style={{ animationDelay: '1.6s' }}>2</span>
+                    <span className="w-8 md:w-12 h-8 md:h-12 flex items-center justify-center animate-fade-in" style={{ animationDelay: '1.8s' }}>3</span>
+                    <span className="w-8 md:w-12 h-8 md:h-12 flex items-center justify-center animate-fade-in" style={{ animationDelay: '2s' }}>4</span>
+                    <span className="w-8 md:w-12 h-8 md:h-12 flex items-center justify-center animate-fade-in" style={{ animationDelay: '2.2s' }}>5</span>
+                    <span className="w-8 md:w-12 h-8 md:h-12 flex items-center justify-center relative animate-fade-in" style={{ animationDelay: '2.4s' }}>
+                        <span className="z-10">6</span>
+                        <svg className="absolute inset-0 m-auto w-10 h-10 md:w-14 md:h-14 animate-heartbeat" viewBox="0 0 24 24" fill="none" stroke="#413d3d" strokeWidth="1.5">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                         </svg>
                     </span>
-                    <span>9</span>
-                    <span>10</span>
+                    <span className="w-8 md:w-12 h-8 md:h-12 flex items-center justify-center animate-fade-in" style={{ animationDelay: '2.6s' }}>9</span>
+                    <span className="w-8 md:w-12 h-8 md:h-12 flex items-center justify-center animate-fade-in" style={{ animationDelay: '2.8s' }}>10</span>
                 </div>
 
                 {/* Countdown Timer */}
