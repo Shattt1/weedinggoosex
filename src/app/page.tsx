@@ -92,7 +92,9 @@ function RSVPForm() {
 }
 
 export default function Home() {
-    
+
+    // --- ИЗМЕНЕНИЕ 2: Состояние для плавной загрузки фото ---
+    const [isHeroImageLoaded, setIsHeroImageLoaded] = useState(false);
 
     const [timeLeft, setTimeLeft] = useState({
         days: 0,
@@ -142,23 +144,33 @@ export default function Home() {
         const elements = document.querySelectorAll('.animate-on-scroll, .animate-fade-in');
         elements.forEach((el) => observer.observe(el));
 
+        // --- ИЗМЕНЕНИЕ 2: Логика плавной загрузки фото ---
+        const heroImage = new Image();
+        heroImage.src = "/images/hero3.jpg"; // Убедитесь, что путь верный
+        heroImage.onload = () => {
+            setIsHeroImageLoaded(true);
+        };
+        // --- Конец ИЗМЕНЕНИЯ 2 ---
+
         return () => observer.disconnect();
     }, []);
 
-    
+
 
     return (
         <div className="min-h-screen bg-[#fbfbfb] text-[#413d3d]">
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-start overflow-hidden pl-8 pr-8">
-                
+
+                {/* --- ИЗМЕНЕНИЕ 2: Обновленные классы для img --- */}
                 <img
                     src="/images/hero3.jpg"
                     alt="Наша свадьба"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${isHeroImageLoaded ? 'opacity-100' : 'opacity-0'}`}
                 />
-                <div className="absolute left-0 top-0 bottom-0 w-1/4 bg-gradient-to-r from-black/80 to-transparent z-10"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-1/4 bg-gradient-to-l from-black/80 to-transparent z-10"></div>
+                {/* --- Конец ИЗМЕНЕНИЯ 2 --- */}
+
+                
                 <div className="relative z-20 text-white animate-fade-in max-w-2xl">
                     {/* Вертикальная дата слева */}
                     <div className="flex flex-col space-y-2 mb-8">
@@ -167,7 +179,7 @@ export default function Home() {
                         <span className="text-6xl md:text-8xl font-serif tracking-wider"></span>
                     </div>
 
-                 
+
                 </div>
             </section>
 
