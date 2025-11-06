@@ -153,7 +153,7 @@ export default function Home() {
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-black/40 z-10" />
                 <img
-                    src="https://ext.same-assets.com/3337128347/322194006.jpeg"
+                    src="/images/hero.jpg"
                     alt="Wedding couple"
                     className="absolute inset-0 w-full h-full object-cover"
                 />
