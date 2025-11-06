@@ -161,8 +161,7 @@ export default function Home() {
                     alt="Наша свадьба"
                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${isHeroImageLoaded ? 'opacity-100' : 'opacity-0'}`}
                 />
-                <div className="absolute left-0 top-0 bottom-0 w-1/4 bg-gradient-to-r from-black/80 to-transparent z-10"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-1/4 bg-gradient-to-l from-black/80 to-transparent z-10"></div>
+                
                 <div className="relative z-20 text-white animate-fade-in max-w-2xl">
                     {/* Вертикальная дата слева */}
                     <div className="flex flex-col space-y-2 mb-8">
