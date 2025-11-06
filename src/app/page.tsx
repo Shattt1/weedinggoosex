@@ -150,20 +150,22 @@ export default function Home() {
     return (
         <div className="min-h-screen bg-[#fbfbfb] text-[#413d3d]">
             {/* Hero Section */}
-            <section className="relative h-screen flex items-center justify-center overflow-hidden">
+            <section className="relative h-screen flex items-center justify-start overflow-hidden pl-8 pr-8">
                 <div className="absolute inset-0 bg-black/40 z-10" />
                 <img
-                    src="/images/hero.jpg"
-                    alt="Wedding couple"
+                    src="/images/hero1.png"
+                    alt="Наша свадьба"
                     className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="relative z-20 text-center text-white animate-fade-in">
-                    <div className="text-8xl md:text-9xl font-serif mb-2 leading-none tracking-wider">06</div>
-                    <div className="text-8xl md:text-9xl font-serif mb-2 leading-none tracking-wider">02</div>
-                    <div className="text-8xl md:text-9xl font-serif mb-12 leading-none tracking-wider">26</div>
-                    <h1 className="text-4xl md:text-6xl font-serif tracking-[0.3em] mb-4">Павел</h1>
-                    <div className="text-2xl md:text-5xl italic font-script mb-4">и</div>
-                    <h1 className="text-4xl md:text-6xl font-serif tracking-[0.3em]">Дилафруз</h1>
+                <div className="relative z-20 text-white animate-fade-in max-w-2xl">
+                    {/* Вертикальная дата слева */}
+                    <div className="flex flex-col space-y-2 mb-8">
+                        <span className="text-6xl md:text-8xl font-serif tracking-wider">06</span>
+                        <span className="text-6xl md:text-8xl font-serif tracking-wider">02</span>
+                        <span className="text-6xl md:text-8xl font-serif tracking-wider">26</span>
+                    </div>
+
+                 
                 </div>
             </section>
 
