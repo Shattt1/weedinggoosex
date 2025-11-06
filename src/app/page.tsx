@@ -241,8 +241,7 @@ export default function Home() {
                     alt="Наша свадьба"
                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${isHeroImageLoaded ? 'opacity-100' : 'opacity-0'}`}
                 />
-                <div className="absolute left-0 top-0 bottom-0 w-1/4 bg-gradient-to-r from-black/80 to-transparent z-10"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-1/4 bg-gradient-to-l from-black/80 to-transparent z-10"></div>
+                
                 <div className="relative z-20 text-white animate-fade-in max-w-2xl">
                     {/* Вертикальная дата слева */}
                     <div className="flex flex-col space-y-2 mb-8">
@@ -321,18 +320,18 @@ export default function Home() {
                 <h2 className="text-5xl md:text-6xl font-script italic text-center mb-16 text-[#5D4037] animate-on-scroll">Программа вечера</h2>
                 <div className="grid md:grid-cols-3 gap-8 md:gap-12">
                     <div className="text-center animate-on-scroll" style={{ animationDelay: '0.1s' }}>
-                        <img src="https://ext.same-assets.com/3337128347/549636627.svg" alt="Gathering" className="w-16 h-16 mx-auto mb-4" />
-                        <div className="text-4xl md:text-5xl font-serif mb-2 text-[#5D4037]">13:00</div>
+                        <img src="https://static.tildacdn.com/tild3232-6364-4266-b135-643731343738/Ellipse_1_copy_4.png" alt="Gathering" className="w-16 h-16 mx-auto mb-4" />
+                        <div className="text-4xl md:text-5xl font-serif mb-2 text-[#5D4037]">14:00</div>
                         <div className="text-lg text-[#5D4037]">сбор гостей</div>
                     </div>
                     <div className="text-center animate-on-scroll" style={{ animationDelay: '0.2s' }}>
-                        <img src="https://ext.same-assets.com/3337128347/1631523801.svg" alt="Ceremony" className="w-16 h-16 mx-auto mb-4" />
-                        <div className="text-4xl md:text-5xl font-serif mb-2 text-[#5D4037]">16:40</div>
-                        <div className="text-lg text-[#5D4037]">выездная<br />церемония</div>
+                        <img src="https://cdn-icons-png.freepik.com/256/185/185482.png?ga=GA1.1.1336563021.1762420667&semt=ais_white_label" alt="Ceremony" className="w-16 h-16 mx-auto mb-4" />
+                        <div className="text-4xl md:text-5xl font-serif mb-2 text-[#5D4037]">14:30</div>
+                        <div className="text-lg text-[#5D4037]">венчание</div>
                     </div>
                     <div className="text-center animate-on-scroll" style={{ animationDelay: '0.3s' }}>
-                        <img src="https://ext.same-assets.com/3337128347/3045296183.svg" alt="Banquet" className="w-16 h-16 mx-auto mb-4" />
-                        <div className="text-4xl md:text-5xl font-serif mb-2 text-[#5D4037]">17:10</div>
+                        <img src="https://optim.tildacdn.com/tild6164-3161-4139-a162-373430383431/-/resize/172x/-/format/webp/Ellipse_1_copy.png.webp" alt="Banquet" className="w-16 h-16 mx-auto mb-4" />
+                        <div className="text-4xl md:text-5xl font-serif mb-2 text-[#5D4037]">16:30</div>
                         <div className="text-lg text-[#5D4037]">начало<br />банкета</div>
                     </div>
                 </div>
