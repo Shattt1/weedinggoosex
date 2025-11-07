@@ -221,7 +221,7 @@ export default function Home() {
         elements.forEach((el) => observer.observe(el));
 
         const heroImage = new Image();
-        heroImage.src = "/images/hero3.jpg";
+        heroImage.src = "/images/hero.jpg";
         heroImage.onload = () => {
             setIsHeroImageLoaded(true);
         };
@@ -237,7 +237,7 @@ export default function Home() {
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-start overflow-hidden pl-8 pr-8">
                 <img
-                    src="/images/hero3.jpg"
+                    src="/images/hero.jpg"
                     alt="Наша свадьба"
                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${isHeroImageLoaded ? 'opacity-100' : 'opacity-0'}`}
                 />
