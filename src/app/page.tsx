@@ -408,14 +408,16 @@ export default function Home() {
                 
 
                     {/* Информация о гендер-ревиле */}
-                    <div className="animate-on-scroll" style={{ animationDelay: '0.3s' }}>
-                        <h2 className="text-5xl md:text-6xl font-script italic mb-8 text-[#5D4037]">Сюрприз для гостей - гендер-пати</h2>
-                        <div className="space-y-6 text-[#5D4037]">
-                            <p className="text-lg leading-relaxed">
-                                В этот особенный день мы хотим поделиться с вами
-                                еще одной радостной новостью! Мы узнаем пол нашего
-                                будущего малыша вместе с вами!
-                            </p>
+                <div className="animate-on-scroll" style={{ animationDelay: '0.3s' }}>
+                    <h2 className="text-5xl md:text-6xl font-script italic mb-8 text-[#5D4037]">
+                        Сюрприз для гостей: <br />гендер-пати
+                    </h2>
+                    <div className="space-y-6 text-[#5D4037]">
+                        <p className="text-lg leading-relaxed">
+                            В этот особенный день мы хотим поделиться с вами
+                            еще одной радостной новостью! Мы узнаем пол нашего
+                            будущего малыша вместе с вами!
+                        </p>
 
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             {/* Фотография */}
@@ -433,60 +435,14 @@ export default function Home() {
                             </p>
 
                             {/* Интерактивный элемент - угадай пол */}
-                            
+
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Wishes Section */}
-            <section className="py-16 px-6 max-w-6xl mx-auto">
-                <h2 className="text-5xl md:text-6xl font-script italic text-center mb-16 text-[#5D4037] animate-on-scroll">Пожелания</h2>
-                <div className="grid md:grid-cols-3 gap-6">
-                    {/* Пожелание 01 - Оливковый цвет */}
-                    <div className="bg-[#6B8E23] p-8 rounded-lg relative animate-on-scroll" style={{ animationDelay: '0.1s' }}>
-                        <div className="absolute top-4 right-4 text-8xl font-serif opacity-20 text-[#5D4037]">01</div>
-                        <h3 className="text-3xl font-script italic mb-6 text-[#5D4037]">Подарки</h3>
-                        <p className="text-sm leading-relaxed text-[#5D4037]">
-                            Свои теплые слова и пожелания<br />
-                            напишите в сердцах, а подарки<br />
-                            – в конверте.
-                        </p>
-                    </div>
-
-                    {/* Пожелание 02 - Розовый цвет */}
-                    <div className="bg-[#F5E6E6] p-8 rounded-lg relative animate-on-scroll" style={{ animationDelay: '0.2s' }}>
-                        <div className="absolute top-4 right-4 text-8xl font-serif opacity-20 text-[#5D4037]">02</div>
-                        <h3 className="text-3xl font-script italic mb-6 text-[#5D4037]">Цветы</h3>
-                        <p className="text-sm leading-relaxed text-[#5D4037]">
-                            Если Вы захотите подарить<br />
-                            нам цветы, то пожалуйста<br />
-                            не мучить букеты ростовской<br />
-                            жарой, а заменить их<br />
-                            на бутылочку вашего<br />
-                            любимого алкоголя для нашей<br />
-                            домашней коллекции.
-                        </p>
-                    </div>
-
-                    {/* Пожелание 03 - Бежевый цвет */}
-                    <div className="bg-[#E8DFD3] p-8 rounded-lg relative animate-on-scroll" style={{ animationDelay: '0.3s' }}>
-                        <div className="absolute top-4 right-4 text-8xl font-serif opacity-20 text-[#5D4037]">03</div>
-                        <h3 className="text-3xl font-script italic mb-6 text-[#5D4037]">Дети</h3>
-                        <p className="text-sm leading-relaxed text-[#5D4037]">
-                            Территория ресторана<br />
-                            не предусматривает наличие<br />
-                            детских зон и отдельных<br />
-                            пространств для организации<br />
-                            детского досуга, позаботьтесь<br />
-                            заранее о том, с кем оставить<br />
-                            Вашу кроху на время<br />
-                            праздничного вечера.<br />
-                            Благодарим Вас за понимание!
-                        </p>
-                    </div>
-                </div>
-            </section>
+            
 
             {/* Organizer Contact */}
             <section className="py-16 px-6 max-w-4xl mx-auto text-center animate-on-scroll">
