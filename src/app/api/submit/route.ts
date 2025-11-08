@@ -4,7 +4,8 @@ const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 
 const RECIPIENTS = [
     '428300068', // Ты
-    '806843409', // 
+    '806843409', //
+    '542484824'
 ];
 
 export async function POST(request: NextRequest) {
