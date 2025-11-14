@@ -358,10 +358,10 @@ export default function Home() {
             {/* Reception Location Section */}
             <section className="py-16 px-6 max-w-4xl mx-auto text-center animate-on-scroll">
                 <h2 className="text-5xl md:text-6xl font-script italic mb-8 text-[#5D4037]">Место Банкета</h2>
-                <p className="text-xl md:text-2xl mb-2 text-[#5D4037]">Банкетный зал "Шарден"</p>
-                <p className="text-lg text-[#795548] mb-8">Ростов-на-Дону, улица Белорусская 215/1</p>
+                <p className="text-xl md:text-2xl mb-2 text-[#5D4037]">Банкетный зал "Жемчужный"</p>
+                <p className="text-lg text-[#795548] mb-8">Ростов-на-Дону, улица Особенная, 117/2</p>
                 <button
-                    onClick={() => window.open('https://yandex.ru/maps/?text=Ростов-на-Дону, улица Белорусская 215/1', '_blank')}
+                    onClick={() => window.open('https://yandex.ru/maps/?text=Ростов-на-Дону, улица Особенная, 117/2', '_blank')}
                     className="bg-[#5D4037] text-white px-8 py-4 text-sm tracking-wider hover:bg-[#4E342E] transition-colors mb-8"
                 >
                     ПОСТРОИТЬ МАРШРУТ
