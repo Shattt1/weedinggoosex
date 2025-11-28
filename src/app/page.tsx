@@ -440,10 +440,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-
-            {/* Wishes Section */}
-            
-
+                        
             {/* Surprise Contact Section */}
             <section className="py-16 px-6 max-w-4xl mx-auto text-center animate-on-scroll">
                 <h2 className="text-5xl md:text-6xl font-script italic mb-8 text-[#5D4037]">Сюрпризы для нас</h2>
@@ -475,7 +472,17 @@ export default function Home() {
                     
                 </div>
             </section>
-
+            {/* Wishes Section */}
+            <section className="py-16 px-6 max-w-6xl mx-auto">
+                <h2 className="text-5xl md:text-6xl font-script italic text-center mb-16 text-[#5D4037] animate-on-scroll">Пожелания</h2>
+                <div className="flex justify-center">
+                    <div className="max-w-2xl text-center animate-on-scroll">
+                        <h3 className="text-3xl font-script italic mb-6 text-[#5D4037]">
+                            Ваши улыбки — лучший подарок! Но если хотите нас порадовать, приносите вместо цветов бутылку вашего любимого напитка!
+                        </h3>
+                    </div>
+                </div>
+            </section>
             {/* Closing Message */}
             <section className="py-16 px-6 max-w-4xl mx-auto text-center animate-on-scroll">
                 <p className="text-xl md:text-2xl italic mb-2 text-[#5D4037]">Наша история — это самая высокая</p>
