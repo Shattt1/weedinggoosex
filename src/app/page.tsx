@@ -480,6 +480,34 @@ export default function Home() {
                         <h3 className="text-3xl font-script italic mb-6 text-[#5D4037]">
                             Ваши улыбки — лучший подарок! Но если хотите нас порадовать, приносите вместо цветов бутылку вашего любимого напитка!
                         </h3>
+                        
+                    </div>
+                </div>
+            </section>
+
+            {/* Important Information Section */}
+            <section className="py-16 px-6 max-w-6xl mx-auto animate-on-scroll">
+                <h2 className="text-4xl md:text-5xl font-script italic text-center mb-12 text-[#5D4037]">Важная информация</h2>
+                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div className="text-center p-8 bg-white rounded-lg shadow-md">
+                        <div className="mb-4">
+                            <svg className="w-12 h-12 mx-auto text-[#5D4037]" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z" />
+                            </svg>
+                        </div>
+                        <p className="text-lg text-[#5D4037]">
+                            В программе нашего мероприятия планируется денежный конкурс, если вы желаете принять участие, можете взять с собой купюру номиналом 500 рублей!
+                        </p>
+                    </div>
+                    <div className="text-center p-8 bg-white rounded-lg shadow-md">
+                        <div className="mb-4">
+                            <svg className="w-12 h-12 mx-auto text-[#5D4037]" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                            </svg>
+                        </div>
+                        <p className="text-lg text-[#5D4037]">
+                            Всем гостям, которые будут присутствовать на венчании, напоминаем взять платки, так как во время венчания женщинам необходимо покрыть голову!
+                        </p>
                     </div>
                 </div>
             </section>
